@@ -5,15 +5,15 @@ import java.util.regex.Pattern;
 
 public class Registration {
 	static Scanner userInput = new Scanner(System.in);
-	
-	//* To check the Format of Mobile number *
-		public static void checkPhoneNumber() { 
-			String phoneNumber = "([0-9]{2})[ ]([0-9]{10})$";
-			System.out.println("Enter the PhoneNo: ");
-			String check = userInput.nextLine();
-			if (Pattern.matches(phoneNumber, check))
-				System.out.println("Correct Format of Phone no");
-			else
-				System.out.println("Invalid: please try again!!!");
-		}
+
+	// * To Validate the Password *
+	public static void checkPassword() {
+		String password = "^[a-zA-Z0-9]{8,}$"; // MINIMUM 8 characters
+		System.out.println("Enter the Password should be minimum of 8 characters: ");
+		String check = userInput.next();
+		if (Pattern.matches(password, check))
+			System.out.println("Valid Password");
+		else
+			System.out.println("Password is Invalid: please try again!!!");
+	}
 }
