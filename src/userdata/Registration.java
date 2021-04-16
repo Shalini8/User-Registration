@@ -6,14 +6,14 @@ import java.util.regex.Pattern;
 public class Registration {
 	static Scanner userInput = new Scanner(System.in);
 
-	// * To Validate the Password *
-	public static void checkPassword() {
-		String password = "^[a-zA-Z0-9]{8,}$"; // MINIMUM 8 characters
-		System.out.println("Enter the Password should be minimum of 8 characters: ");
+	// * To Validate the Password :it should contain atleast 1 upperCase*
+	public static void checkPatternPassword() { 
+		String password = "^(\\d[a-z])*(?=.*[A-Z]).{8,}$";
+		System.out.println("Enter the 8 digits Password should contain atleast 1 UpperCase : ");
 		String check = userInput.next();
 		if (Pattern.matches(password, check))
-			System.out.println("Valid Password");
+			System.out.println("Valid Password : you may proceed further");
 		else
-			System.out.println("Password is Invalid: please try again!!!");
+			System.out.println("Invalid: please try again!!!");
 	}
 }
