@@ -6,14 +6,14 @@ import java.util.regex.Pattern;
 public class Registration {
 	static Scanner userInput = new Scanner(System.in);
 	
-	//* Method to check Format of FirstName * 
-	public static void checkFirstName() {
-		String firstName = "^[A-Z]{1}[a-z]{2,}$";
-		System.out.println("Enter the First Name: ");
+	//*To check the Format of last name*
+	public static void checkLastName() {
+		String LastName = "^[A-Z]{1}[a-z]{2,}$";
+		System.out.println("Enter the Last Name: ");
 		String check = userInput.next();
-		if (Pattern.matches(firstName, check))
-			System.out.println("Inserted FirstName : you may proceed further");
+		if (Pattern.matches(LastName, check))
+			System.out.println("Enter the LastName in correct Format: ");
 		else
 			System.out.println("Invalid way : please try again!!!");
-		}
 	}
+}
