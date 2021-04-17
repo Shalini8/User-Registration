@@ -1,20 +1,15 @@
 package userdata;
 
-import java.util.Scanner;
 import java.util.regex.Pattern;
 
 public class Registration {
-	static Scanner userInput = new Scanner(System.in);
 
-	// * To Validate the Password :it should contain atleast1 UpperCase 1 Numeric
-	// digit,1 special character*
-	public static void checkPattern2Password() {
-		String password = "^(?=.*\\d)([a-z])*(?=.*[A-Z])(?=.*[@#$%^&+=]).{8,}$";
-		System.out.println("Enter the minimum 8 digits Password should contain atleast 1 upperCase and numeric digit and 1 Special character : ");
-		String check = userInput.next();
-		if (Pattern.matches(password, check))
-			System.out.println("Valid password");
+	// * To Validate all the Emails provided
+	public static void checkEmail(String email) {
+		String emailPattern = ("^(?!\\.)[A-Za-z0-9]+([._%+-]?[0-9])*@[A-Za-z0-9-]+\\.[a-zA-Z]{2,6}(\\.[A-Za-z]{2,6})?$");
+		if (Pattern.matches(emailPattern, email))
+			System.out.println("Correct Format of Email");
 		else
 			System.out.println("Error !!! please check your Format");
-	}
+		}
 }
